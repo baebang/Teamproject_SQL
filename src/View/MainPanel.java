@@ -23,7 +23,7 @@ public class MainPanel extends JPanel {
 		SelectedList = control.getSelectedList();
 		int count = SelectedList.size();
 		for(Data list : SelectedList) {
-			list.
+
 			System.out.println(list.getPeople_num());
 		}
 	}
