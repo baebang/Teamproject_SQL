@@ -20,7 +20,7 @@ public class Selected_datePanel extends JPanel{
 		this.setLayout(null);
 
 		// 지정날짜
-		JLabel Selected_date_NewLabel = new JLabel("Selected & data");
+		JLabel Selected_date_NewLabel = new JLabel("Selected date");
 		Selected_date_NewLabel.setFont(new Font("Arial", Font.BOLD, 35));
 		Selected_date_NewLabel.setForeground(new Color(0, 35, 110));
 		Selected_date_NewLabel.setHorizontalAlignment(JLabel.CENTER);

@@ -36,7 +36,9 @@ public class Main {
    // 4번 화면
    private Person_AreaPanel Person_AreaPanel;
    
-   // 5번화면
+   
+   // 화가 너무나네
+   // 5번화면 
    private InformationPanel InformationPanel;
    
    
