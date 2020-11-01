@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Date_AreaPanel extends JPanel{
-	public Date_AreaPanel(JFrame frame) {
+public class Patient_NumberPanel extends JPanel{
+	public Patient_NumberPanel(JFrame frame) {
 		super();
 		panelInit(frame);
 	}
@@ -20,7 +20,7 @@ public class Date_AreaPanel extends JPanel{
 		this.setLayout(null);
 
 		// 날짜 & 지역
-		JLabel Date_Area_Label = new JLabel("Date & Area");
+		JLabel Date_Area_Label = new JLabel("Patient & Number");
 		Date_Area_Label.setFont(new Font("Arial", Font.BOLD, 35));
 		Date_Area_Label.setForeground(new Color(0, 35, 110));
 		Date_Area_Label.setHorizontalAlignment(JLabel.CENTER);

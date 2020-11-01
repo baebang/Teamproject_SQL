@@ -25,7 +25,7 @@ public class Main {
    private MainPanel Mainpanel;
    
    // 1번 화면
-   private Date_AreaPanel Date_AreaPanel;
+   private Patient_NumberPanel Patient_NumberPanel;
    
    // 2번 화면
    private DurationPanel DurationPanel;
@@ -49,7 +49,7 @@ public class Main {
       x.setFont(new Font("돋움", Font.BOLD, 15));
 
       m1 = new JMenuItem("Main 화면");
-      m2 = new JMenuItem("날짜, 구역");
+      m2 = new JMenuItem("환자 번호 조회");
       m3 = new JMenuItem("기간");
       m4 = new JMenuItem("지정날짜");
       m5 = new JMenuItem("인원, 구역");
@@ -71,7 +71,7 @@ public class Main {
          @Override
          public void actionPerformed(ActionEvent arg0) {
             Mainpanel.setVisible(true);
-            Date_AreaPanel.setVisible(false);
+            Patient_NumberPanel.setVisible(false);
             DurationPanel.setVisible(false);
             Selected_datePanel.setVisible(false);
             Person_AreaPanel.setVisible(false);
@@ -83,7 +83,7 @@ public class Main {
          @Override
          public void actionPerformed(ActionEvent arg0) {
              Mainpanel.setVisible(false);
-             Date_AreaPanel.setVisible(true);
+             Patient_NumberPanel.setVisible(true);
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(false);
@@ -95,7 +95,7 @@ public class Main {
          @Override
          public void actionPerformed(ActionEvent arg0) {
              Mainpanel.setVisible(false);
-             Date_AreaPanel.setVisible(false);
+             Patient_NumberPanel.setVisible(false);
              DurationPanel.setVisible(true);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(false);
@@ -107,7 +107,7 @@ public class Main {
          @Override
          public void actionPerformed(ActionEvent arg0) {
              Mainpanel.setVisible(false);
-             Date_AreaPanel.setVisible(false);
+             Patient_NumberPanel.setVisible(false);
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(true);
              Person_AreaPanel.setVisible(false);
@@ -119,7 +119,7 @@ public class Main {
          @Override
          public void actionPerformed(ActionEvent arg0) {
              Mainpanel.setVisible(false);
-             Date_AreaPanel.setVisible(false);
+             Patient_NumberPanel.setVisible(false);
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(true);
@@ -131,7 +131,7 @@ public class Main {
          @Override
          public void actionPerformed(ActionEvent arg0) {
              Mainpanel.setVisible(false);
-             Date_AreaPanel.setVisible(false);
+             Patient_NumberPanel.setVisible(false);
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(false);
@@ -153,7 +153,7 @@ public class Main {
       menuInit();
       
       Mainpanel = new MainPanel(frame);
-      Date_AreaPanel = new Date_AreaPanel(frame);
+      Patient_NumberPanel = new Patient_NumberPanel(frame);
       DurationPanel = new DurationPanel(frame);
       Selected_datePanel = new Selected_datePanel(frame);
       Person_AreaPanel = new Person_AreaPanel(frame);
