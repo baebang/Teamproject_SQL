@@ -62,7 +62,7 @@ public class MainPanel extends JPanel {
 		
 		
 		this.setBackground(new Color(255, 255, 255));
-		this.setBounds(0, 0, 636, 360);
+		this.setBounds(0, 0, 636, 440);
 		frame.getContentPane().add(this);
 		this.setLayout(null);
 

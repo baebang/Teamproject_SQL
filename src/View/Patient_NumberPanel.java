@@ -32,7 +32,7 @@ public class Patient_NumberPanel extends JPanel{
 	
 	private void panelInit(JFrame frame) {
 		this.setBackground(new Color(255, 255, 255));
-		this.setBounds(0, 0, 636, 360);
+		this.setBounds(0, 0, 636, 440);//636 360
 		this.setLayout(null);
 
 		// 날짜 & 지역
@@ -65,11 +65,102 @@ public class Patient_NumberPanel extends JPanel{
 		month1.setBounds(0, 160, 70, 30);
 		month1.setVisible(false);
 		
+		data = new JLabel("확진 일");
+		data.setFont(new Font(null, Font.BOLD, 15));
+		data.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		data.setHorizontalAlignment(JLabel.CENTER);
+		data.setBounds(70, 130, 70, 30);
+		data.setVisible(false);
+		data1 = new JLabel();
+		data1.setFont(new Font(null, Font.BOLD, 15));
+		data1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		data1.setHorizontalAlignment(JLabel.CENTER);
+		data1.setBounds(70, 160, 70, 30);
+		data1.setVisible(false);
+		
+		area = new JLabel("지역");
+		area.setFont(new Font(null, Font.BOLD, 15));
+		area.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		area.setHorizontalAlignment(JLabel.CENTER);
+		area.setBounds(140, 130, 70, 30);
+		area.setVisible(false);
+		area1 = new JLabel();
+		area1.setFont(new Font(null, Font.BOLD, 15));
+		area1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		area1.setHorizontalAlignment(JLabel.CENTER);
+		area1.setBounds(140, 160, 70, 30);
+		area1.setVisible(false);
+		
+		status = new JLabel("상태");
+		status.setFont(new Font(null, Font.BOLD, 15));
+		status.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		status.setHorizontalAlignment(JLabel.CENTER);
+		status.setBounds(210, 130, 70, 30);
+		status.setVisible(false);
+		status1 = new JLabel();
+		status1.setFont(new Font(null, Font.BOLD, 15));
+		status1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		status1.setHorizontalAlignment(JLabel.CENTER);
+		status1.setBounds(210, 160, 70, 30);
+		status1.setVisible(false);
+		
+		route = new JLabel("이동경로");
+		route.setFont(new Font(null, Font.BOLD, 15));
+		route.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		route.setHorizontalAlignment(JLabel.LEFT);
+		route.setBounds(0, 190, 400, 30);
+		route.setVisible(false);
+		route1 = new JLabel();
+		route1.setFont(new Font(null, Font.BOLD, 10));
+		route1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		route1.setHorizontalAlignment(JLabel.LEFT);
+		route1.setBounds(0, 220, 400, 30);
+		route1.setVisible(false);
+		
+		travel = new JLabel("여행력");
+		travel.setFont(new Font(null, Font.BOLD, 15));
+		travel.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		travel.setHorizontalAlignment(JLabel.LEFT);
+		travel.setBounds(0, 250, 400, 30);
+		travel.setVisible(false);
+		travel1 = new JLabel();
+		travel1.setFont(new Font(null, Font.BOLD, 10));
+		travel1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		travel1.setHorizontalAlignment(JLabel.LEFT);
+		travel1.setBounds(0, 280, 400, 30);
+		travel1.setVisible(false);
+		
+		contact = new JLabel("접촉력");
+		contact.setFont(new Font(null, Font.BOLD, 15));
+		contact.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		contact.setHorizontalAlignment(JLabel.LEFT);
+		contact.setBounds(0, 310, 400, 30);
+		contact.setVisible(false);
+		contact1 = new JLabel();
+		contact1.setFont(new Font(null, Font.BOLD, 10));
+		contact1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		contact1.setHorizontalAlignment(JLabel.LEFT);
+		contact1.setBounds(0, 340, 400, 30);
+		contact1.setVisible(false);
+		
+		
 		this.add(Date_Area_Label);
 		this.add(Patient_Number);
 		this.add(Select);
 		this.add(month);
 		this.add(month1);
+		this.add(data);
+		this.add(data1);
+		this.add(area);
+		this.add(area1);
+		this.add(status);
+		this.add(status1);
+		this.add(route);
+		this.add(route1);
+		this.add(travel);
+		this.add(travel1);
+		this.add(contact);
+		this.add(contact1);
 
 	}
 	
@@ -85,8 +176,33 @@ public class Patient_NumberPanel extends JPanel{
 						Selected_Data = control.Patient_Number(num);
 						if(Selected_Data != null) {
 							month1.setText(Integer.toString(Selected_Data.getMonth()));
-							month.setVisible(true);
 							month1.setVisible(true);
+							month.setVisible(true);
+							
+							data1.setText(Integer.toString(Selected_Data.getDate()));
+							data1.setVisible(true);
+							data.setVisible(true);
+							
+							area1.setText(Selected_Data.getArea());
+							area1.setVisible(true);
+							area.setVisible(true);
+							
+							status1.setText(Selected_Data.getStatus());
+							status1.setVisible(true);
+							status.setVisible(true);
+
+							route1.setText(Selected_Data.getRoute());
+							route1.setVisible(true);
+							route.setVisible(true);
+							
+							travel1.setText(Selected_Data.getTravel());
+							travel1.setVisible(true);
+							travel.setVisible(true);
+							
+							contact1.setText(Selected_Data.getContact());
+							contact1.setVisible(true);
+							contact.setVisible(true);
+							
 						}
 						break;
 				}

@@ -68,7 +68,7 @@ public class Main {
 
       mb.add(x);
       frame.setJMenuBar(mb);
-      frame.setSize(650, 420);
+      frame.setSize(650, 500);//650 420
       frame.setVisible(true);
 
       m1.addActionListener(new ActionListener() {
