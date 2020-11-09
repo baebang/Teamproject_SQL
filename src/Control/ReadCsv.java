@@ -16,7 +16,7 @@ public class ReadCsv {
 			ArrayList<Data> ret = new ArrayList<Data>();
 			BufferedReader br = null;
 			try {
-				br = Files.newBufferedReader(Paths.get("DataCSV.csv"));
+				br = Files.newBufferedReader(Paths.get("DataCSV1.csv"));
 				String line = "";
 				line = br.readLine();
 				while ((line = br.readLine()) != null) {
