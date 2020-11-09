@@ -6,8 +6,7 @@ import Model.Data;
 
 public class Control {
 	
-	private static ArrayList<Data> DataList;
-	private static ArrayList<Data> SelectedList;
+	private static ArrayList<Data> DataList, SelectedList;
 	
 	public Control() {
 		ReadCsv csv = new ReadCsv();
@@ -17,22 +16,19 @@ public class Control {
 		dbm.saveAll(DataList);
 	}
 	
-	public static void dataSelect(Object selectedItem) {
-		String selected = (String) selectedItem;
-		SelectedList = new ArrayList<>();
-		for(Data item : DataList) {
-			if(item.getMonth() == Integer.parseInt(selected)) {
-				SelectedList.add(item);
-				System.out.println(item.getArea());
-			}
-		}
-		
-		System.out.println(SelectedList.size());
-		
-	}
+
 
 	public ArrayList<Data> getSelectedList() {
 		// TODO Auto-generated method stub
 		return Control.SelectedList;
+	}
+
+
+
+	public Data Patient_Number(int num) {
+		for(Data item : DataList) {
+			if(item.getPeople_num() == num) return item;
+		}
+		return null;
 	}
 }

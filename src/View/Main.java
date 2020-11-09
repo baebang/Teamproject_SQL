@@ -12,10 +12,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import Control.Control;
+
 public class Main {
 	private static final long serialVersionUID = 1L;
 	private JComboBox<String> combo;
-	
+	private Control control;
    static JMenuBar mb;
    static JMenu x;
    static JMenuItem m1, m2, m3, m4, m5, m6;
@@ -152,34 +154,34 @@ public class Main {
 
    private void Initialize() {
       frameInit();
-      menuInit();
+
       
       Mainpanel = new MainPanel(frame);
-      Patient_NumberPanel = new Patient_NumberPanel(frame);
+      Patient_NumberPanel = new Patient_NumberPanel(frame, control);
       DurationPanel = new DurationPanel(frame);
       Selected_datePanel = new Selected_datePanel(frame);
       Person_AreaPanel = new Person_AreaPanel(frame);
       InformationPanel = new InformationPanel(frame);
+      
+      menuInit();
+      
+      Patient_NumberPanel.setVisible(false);
+      DurationPanel.setVisible(false);
+      Selected_datePanel.setVisible(false);
+      Person_AreaPanel.setVisible(false);
+      InformationPanel.setVisible(false);
    }
 
    public Main() {
       frame = new JFrame();
+      control = new Control();
       Initialize();
    }
 
-   public static void main(String[] args) {
-      EventQueue.invokeLater(new Runnable() {
-         public void run() {
-            try {
-               Main window = new Main();
-               
-               window.frame.setVisible(true);
-            } catch (Exception e) {
-               e.printStackTrace();
-            }
-         }
-      });
-   }
+	public static void main(String[] args) {
+		Main window = new Main();
+		window.frame.setVisible(true);
+	}
 
 }
 
