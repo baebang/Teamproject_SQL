@@ -15,9 +15,9 @@ import javax.swing.JMenuItem;
 import Control.Control;
 
 public class Main {
-	private static final long serialVersionUID = 1L;
-	private JComboBox<String> combo;
-	private Control control;
+   private static final long serialVersionUID = 1L;
+   private JComboBox<String> combo;
+   private Control control;
    static JMenuBar mb;
    static JMenu x;
    static JMenuItem m1, m2, m3, m4, m5, m6;
@@ -38,8 +38,6 @@ public class Main {
    // 4번 화면
    private Person_AreaPanel Person_AreaPanel;
    
-   
-   // 화가 너무나네
    // 5번화면 
    private InformationPanel InformationPanel;
    
@@ -52,7 +50,7 @@ public class Main {
       x.setForeground(Color.WHITE);
       x.setFont(new Font("돋움", Font.BOLD, 15));
 
-      m1 = new JMenuItem("Main 화면");
+      m1 = new JMenuItem("Loding 화면");
       m2 = new JMenuItem("환자 번호 조회");
       m3 = new JMenuItem("기간");
       m4 = new JMenuItem("지정날짜");
@@ -159,7 +157,7 @@ public class Main {
       Mainpanel = new MainPanel(frame);
       Patient_NumberPanel = new Patient_NumberPanel(frame, control);
       DurationPanel = new DurationPanel(frame);
-      Selected_datePanel = new Selected_datePanel(frame);
+//      Selected_datePanel = new Selected_datePanel(frame);
       Person_AreaPanel = new Person_AreaPanel(frame);
       InformationPanel = new InformationPanel(frame);
       
@@ -178,10 +176,9 @@ public class Main {
       Initialize();
    }
 
-	public static void main(String[] args) {
-		Main window = new Main();
-		window.frame.setVisible(true);
-	}
+   public static void main(String[] args) {
+      Main window = new Main();
+      window.frame.setVisible(true);
+   }
 
 }
-
