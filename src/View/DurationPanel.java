@@ -3,6 +3,8 @@ package View;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -11,15 +13,25 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Control.Control;
+
 public class DurationPanel extends JPanel{
    
    private DurationGraph duration_Graph;
-   private JComboBox duration_month, duration_date, AreaBox;
+   private JComboBox duration_month, duration_date;
+   private Control control;
+   private int[] duration_Data;
    
-   public DurationPanel(JFrame frame) {
-      super();
-      panelInit(frame);
-       graphInit();
+   public DurationPanel(JFrame frame, Control control) {
+		super();
+		panelInit(frame);
+		this.control = control;
+		duration_Graph = new DurationGraph();
+		duration_Graph = new DurationGraph();
+		duration_Graph.setBorder(BorderFactory.createLineBorder(new Color(0, 35, 110)));
+		duration_Graph.setBackground(Color.white);
+		duration_Graph.setBounds(60, 110, 510, 240);
+		this.add(duration_Graph);
    }
 
    private void panelInit(JFrame frame) {
@@ -71,14 +83,27 @@ public class DurationPanel extends JPanel{
          
        JButton btnApply = new JButton("확인");
        btnApply.setBounds(454, 65, 120, 23);
+       btnApply.setActionCommand("확인");
+       btnApply.addActionListener(new MyActionListener());
        this.add(btnApply);
    }
-   
-      private void graphInit() {
-              duration_Graph = new DurationGraph();
-              duration_Graph.setBorder(BorderFactory.createLineBorder(new Color(0, 35, 110)));
-              duration_Graph.setBackground(Color.white);
-              duration_Graph.setBounds(60, 110, 510, 240);
-            this.add(duration_Graph);
-         }
+      
+      
+      class MyActionListener implements ActionListener{
+    	private String Month, date;
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			switch(e.getActionCommand()) {
+			
+				case "확인":
+					Month = (String) duration_month.getSelectedItem();
+					date = (String) duration_date.getSelectedItem();
+					duration_Data = control.duration_filter(Month, date);
+					duration_Graph.getData(duration_Data, control.getMax());
+					duration_Graph.getDate(Month, date);
+					duration_Graph.repaint();
+			}
+		}
+      }
 }

@@ -156,8 +156,8 @@ public class Main {
       
       Mainpanel = new MainPanel(frame);
       Patient_NumberPanel = new Patient_NumberPanel(frame, control);
-      DurationPanel = new DurationPanel(frame);
-//      Selected_datePanel = new Selected_datePanel(frame);
+      DurationPanel = new DurationPanel(frame, control);
+      Selected_datePanel = new Selected_datePanel(frame);
       Person_AreaPanel = new Person_AreaPanel(frame);
       InformationPanel = new InformationPanel(frame);
       

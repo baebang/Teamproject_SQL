@@ -8,61 +8,59 @@ import java.awt.Rectangle;
 import javax.swing.JPanel;
 
 public class DurationGraph extends JPanel{
+   private int[] num_Data;
+   private int Start_Month, Start_Date, Max_data;
+   private int[] Month_List = {31,29,31,30,31,30,31,31,30,31,30,31};
    
-   private int []num_Data = {0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0};
+   public void getData(int[] data, int max) {
+	   num_Data = data;
+	   Max_data = max;
+   }
    
-      public DurationGraph() {
-            super();
-            num_Data = new int[15];
-      }
+   public void getDate(String Month, String date) {
+	   Start_Month = Integer.parseInt(Month.substring(0, Month.length()-1));
+	   Start_Date = Integer.parseInt(date.substring(0, date.length()-1));
+   }
 
    @Override
    public void paintComponent(Graphics g) {
       
-//	  데이터 임의로 대입
-      int []num_Data = { 30, 25, 40, 55, 65, 70, 80 ,10 , 60, 30, 40, 30, 10, 70, 80 };
-   
-      super.paintComponent(g);
+	   if(num_Data != null) {
+		   	//	  데이터 임의로 대입
 
-      int x = 30;// 초기 x좌표
+			super.paintComponent(g);
 
-      for (int i = 0; i <= 14; i++) {
-         // x축 기준라인
-         g.setColor(Color.BLACK);
-         g.drawString(i + 1 +"일", x + 23, 230);
-         
-         g.setColor(Color.PINK);
-           g.fillRect(x + 30, 215 - num_Data[i] * 2 , 17, num_Data[i] * 2);
-            
-           x += 30;
-      }      
-      
-      x = 30; // 다시 x 초기 값으로 셋팅
-      
-      
-      // y축 기준라인 
-         String [] standard= {"90","80","70","60","50","40","30","20","10"};
-         
-         g.setColor(Color.BLACK);   
-         g.drawString("100", 15, 20); 
-         g.setColor(Color.BLACK);   
-         g.drawString("0", 24, 220);
-         
-         g.setColor(Color.BLACK);
-         int y = 40;
-         
-         for(int i = 0; i <= 8; i++) {
-            g.drawString(standard[i], 20, y);
-            y = y + 20;
-         }
+			int x = 30;// 초기 x좌표
 
-      g.drawLine(40, 10, 40, 220);
+			for (int i = 0; i <= 14; i++) {
+				// x축 기준라인
+				if(Start_Date > Month_List[Start_Month-1]) Start_Date = 1;
+				g.setColor(Color.BLACK);
+				g.drawString(Start_Date + "일", x + 23, 230);
+				
+				g.drawString(Integer.toString(num_Data[i]), x + 33, (int)(12+(200-(200/(double)Max_data)*num_Data[i])));
+				
+				g.setColor(Color.PINK);
+				g.fillRect(x + 30, (int)(15+(200-(200/(double)Max_data)*num_Data[i])), 17, (int)((200/(double)Max_data)*num_Data[i]));
 
-      int xx = 12;
-      for (int i = 0; i <= 10; i++) {
-         g.drawLine(40, xx, 45, xx);
-         xx = xx + 23;
-      }
+				x += 30;
+				Start_Date++;
+			}
+
+			x = 30; // 다시 x 초기 값으로 셋팅
+
+			// y축 기준라인
+			g.setColor(Color.BLACK);
+			int y = 20;
+
+			for (int i = 10; i >= 0; i--) {
+				g.drawString(Integer.toString((int)(Max_data*(i/(double)10))), 17, y);
+				g.drawLine(40, y-5, 45, y-5);
+				y = y + 20;
+			}
+			g.drawLine(40, 15, 40, 215);
+
+		}
    }
 
 }
