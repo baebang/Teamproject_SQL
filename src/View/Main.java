@@ -45,9 +45,9 @@ public class Main {
    private void menuInit() { // 메뉴바 구현
       
       mb = new JMenuBar();
-      mb.setBackground(new Color(0, 35, 110));
+      mb.setBackground(new Color(255, 204, 204));
       x = new JMenu("Menu");
-      x.setForeground(Color.WHITE);
+      x.setForeground(Color.BLACK);
       x.setFont(new Font("돋움", Font.BOLD, 15));
 
       m1 = new JMenuItem("Loding 화면");

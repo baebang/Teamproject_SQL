@@ -38,7 +38,7 @@ public class Patient_NumberPanel extends JPanel{
 		// 날짜 & 지역
 		JLabel Date_Area_Label = new JLabel("Patient & Number");
 		Date_Area_Label.setFont(new Font("Arial", Font.BOLD, 35));
-		Date_Area_Label.setForeground(new Color(0, 35, 110));
+		Date_Area_Label.setForeground(new Color(204, 051, 051));
 		Date_Area_Label.setHorizontalAlignment(JLabel.CENTER);
 		Date_Area_Label.setBounds(70, 5, 500, 40);
 			
