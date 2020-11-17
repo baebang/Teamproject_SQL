@@ -3,6 +3,9 @@ package View;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -11,15 +14,27 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Control.Control;
+import View.DurationPanel.MyActionListener;
+
+
 public class Selected_datePanel extends JPanel{
    
    private SelectedGraph selected_Graph;
    private JComboBox selected_month, selected_date;
+   private Control control;
+   private int[] selected_Data;
    
-   public Selected_datePanel(JFrame frame) {
+   public Selected_datePanel(JFrame frame, Control control) {
       super();
       panelInit(frame);
-       graphInit();
+      this.control = control;
+      selected_Graph = new SelectedGraph();
+      selected_Graph.setBorder(BorderFactory.createLineBorder(new Color(0, 35, 110)));
+      selected_Graph.setBackground(Color.white);
+      selected_Graph.setBounds(60, 110, 510, 240);
+		this.add(selected_Graph);
+		
    }
    
    private void panelInit(JFrame frame) {
@@ -71,15 +86,29 @@ public class Selected_datePanel extends JPanel{
          
        JButton btnApply = new JButton("확인");
        btnApply.setBounds(454, 65, 120, 23);
+       btnApply.setActionCommand("확인");
+       btnApply.addActionListener(new MyActionListener());
        this.add(btnApply);
    }
    
-      private void graphInit() {
-         selected_Graph = new SelectedGraph();
-         selected_Graph.setBorder(BorderFactory.createLineBorder(new Color(0, 35, 110)));
-         selected_Graph.setBackground(Color.white);
-         selected_Graph.setBounds(60, 110, 510, 240);
-         this.add(selected_Graph);
-      }
-
+   class MyActionListener implements ActionListener{
+   	private String Month, date;
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			switch(e.getActionCommand()) {
+			
+				case "확인":
+					
+					Month = (String) selected_month.getSelectedItem();
+					date = (String) selected_date.getSelectedItem();
+					selected_Data = control.selected_filter(Month, date);
+					selected_Graph.getData(selected_Data, control.getMax());
+					selected_Graph.getDate(Month, date);
+					selected_Graph.repaint();
+			}
+		}
+     }
 }
+
+

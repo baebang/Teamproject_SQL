@@ -27,7 +27,6 @@ public class DurationPanel extends JPanel{
 		panelInit(frame);
 		this.control = control;
 		duration_Graph = new DurationGraph();
-		duration_Graph = new DurationGraph();
 		duration_Graph.setBorder(BorderFactory.createLineBorder(new Color(0, 35, 110)));
 		duration_Graph.setBackground(Color.white);
 		duration_Graph.setBounds(60, 110, 510, 240);
@@ -97,6 +96,7 @@ public class DurationPanel extends JPanel{
 			switch(e.getActionCommand()) {
 			
 				case "»Æ¿Œ":
+					
 					Month = (String) duration_month.getSelectedItem();
 					date = (String) duration_date.getSelectedItem();
 					duration_Data = control.duration_filter(Month, date);

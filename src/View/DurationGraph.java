@@ -26,7 +26,6 @@ public class DurationGraph extends JPanel{
    public void paintComponent(Graphics g) {
       
 	   if(num_Data != null) {
-		   	//	  데이터 임의로 대입
 
 			super.paintComponent(g);
 
