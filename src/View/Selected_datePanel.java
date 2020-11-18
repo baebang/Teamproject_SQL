@@ -23,7 +23,7 @@ public class Selected_datePanel extends JPanel{
    private SelectedGraph selected_Graph;
    private JComboBox selected_month, selected_date;
    private Control control;
-   private int[] selected_Data;
+   private int selected_Data;
    
    public Selected_datePanel(JFrame frame, Control control) {
       super();

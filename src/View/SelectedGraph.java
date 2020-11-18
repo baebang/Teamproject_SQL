@@ -8,12 +8,12 @@ import java.awt.Rectangle;
 import javax.swing.JPanel;
 
 public class SelectedGraph extends JPanel {
-	private int[] num_Data;
+	private int num_Data = -1;
 	private int Start_Month, Start_Date, Max_data;
 	private int[] Month_List = {31,29,31,30,31,30,31,31,30,31,30,31};
 	
-	public void getData(int[] data, int max) {
-		   num_Data = data;
+	public void getData(int selected_Data, int max) {
+		   num_Data = selected_Data;
 		   Max_data = max;
 	   }
 
@@ -25,7 +25,7 @@ public class SelectedGraph extends JPanel {
 	@Override
 	   public void paintComponent(Graphics g) {
 	      
-		   if(num_Data != null) {
+		   if(num_Data != -1) {
 
 				super.paintComponent(g);
 
@@ -37,10 +37,10 @@ public class SelectedGraph extends JPanel {
 					g.setColor(Color.BLACK);
 					g.drawString(Start_Month+"월"+Start_Date + "일 총 확진자.", this.getWidth()/2-45, 230);
 					
-					g.drawString(Integer.toString(num_Data[i]), this.getWidth()/2-5, (int)(12+(200-(200/(double)Max_data)*num_Data[i])));
+					g.drawString(Integer.toString(num_Data), this.getWidth()/2-5, (int)(12+(200-(200/(double)Max_data)*num_Data)));
 					
 					g.setColor(Color.PINK);
-					g.fillRect(this.getWidth()/2-30, (int)(15+(200-(200/(double)Max_data)*num_Data[i])), 60, (int)((200/(double)Max_data)*num_Data[i]));
+					g.fillRect(this.getWidth()/2-30, (int)(15+(200-(200/(double)Max_data)*num_Data)), 60, (int)((200/(double)Max_data)*num_Data));
 
 					x += 30;
 					Start_Date++;

@@ -10,9 +10,10 @@ public class Control {
 	private int[] Month_List = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30};
 	private int[] durationData;
 	private int duration_Max;
+	private DBmanager dbm;
 	public Control() {
 		ReadCsv csv = new ReadCsv();
-		DBmanager dbm = new DBmanager();
+		dbm = new DBmanager();
 		
 		DataList = csv.LoadCSV();
 		dbm.saveAll(DataList);
@@ -32,77 +33,46 @@ public class Control {
 		}
 		return null;
 	}
-	
-
-	
 
 
 
-	public int[] duration_filter(String month, String date) {
-		
-		SelectedList = new ArrayList<>();
+	public int[] duration_filter(String month1, String date1) {
+		String month = month1.substring(0, month1.length()-1);
+		String date = date1.substring(0, date1.length()-1);
 		durationData = new int[15];
 		duration_Max = 0;
-		int filter_sum=0;
-		
-		//filter 의 month와 date 값을 0 ~ 365일의 값으로 수치화한다.
-		for(int i=1; i<Month_List.length; i++) {
-			if(i >= Integer.parseInt(month.substring(0, month.length()-1))) break;
-			else filter_sum += Month_List[i];
-		}
-		filter_sum += Integer.parseInt(date.substring(0, date.length()-1));
-		
-		int item_sum;
-		for(Data item : DataList) {
-			item_sum = 0;
-			for(int i=1; i<Month_List.length; i++) {
-				if(i >= item.getMonth()) break;
-				else item_sum += Month_List[i];
-			}
-			item_sum += item.getDate();
+		for(int i=0; i<15; i++) {
 			
-			if(filter_sum <= item_sum && filter_sum+15 > item_sum) {
-				durationData[item_sum-filter_sum]++;
+			String sql = "Select Count(num) from sqldata where MONTH = " + month + " AND DATE = " + date + ";";
+			durationData[i] = dbm.LoadData(sql);
+			
+			date = Integer.toString(Integer.parseInt(date) + 1);
+			
+			//일 수가 넘어가면 다음 달 1일로 만듭니다.
+			if(Integer.parseInt(date) > Month_List[Integer.parseInt(month)]) {
+				month = Integer.toString(Integer.parseInt(month) + 1);
+				date = "1";
 			}
+			
 		}
 		
 		for(int i: durationData) duration_Max = Math.max(duration_Max, i);
-		
 		return durationData;
 	}
 	
-	public int[] selected_filter(String month, String date) {
+	public int selected_filter(String month1, String date1) {
 		
-		SelectedList = new ArrayList<>();
-		durationData = new int[15];
-		duration_Max = 0;
-		int filter_sum=0;
+		String month = month1.substring(0, month1.length()-1);
+		String date = date1.substring(0, date1.length()-1);		
 		
-		//filter 의 month와 date 값을 0 ~ 365일의 값으로 수치화한다.
-		for(int i=1; i<Month_List.length; i++) {
-			if(i >= Integer.parseInt(month.substring(0, month.length()-1))) break;
-			else filter_sum += Month_List[i];
-		}
-		filter_sum += Integer.parseInt(date.substring(0, date.length()-1));
+		String sql = "Select Count(num) from sqldata where MONTH = " + month + " AND DATE = " + date + ";";
+		int selected_data = dbm.LoadData(sql);	
+		duration_Max = selected_data;
 		
-		int item_sum;
-		for(Data item : DataList) {
-			item_sum = 0;
-			for(int i=1; i<Month_List.length; i++) {
-				if(i >= item.getMonth()) break;
-				else item_sum += Month_List[i];
-			}
-			item_sum += item.getDate();
-			
-			if(filter_sum == item_sum && filter_sum+15 > item_sum) {
-				durationData[item_sum-filter_sum]++;
-			}
-		}
-		
-		for(int i: durationData) duration_Max = Math.max(duration_Max, i);
-		
-		return durationData;
+		return selected_data;
 	}
+	
+	
 	public int getMax() {
 		return duration_Max;
 	}
