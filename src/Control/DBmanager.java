@@ -99,4 +99,34 @@ public class DBmanager {
 		}
 		return 0;
 	}
+
+	public int[][] LoadAreaData(String sql) {
+		int[][] Month_Count = new int[2][2];
+		int month, count;
+		Month_Count[0][1] = 0; // 최댓값을 저장하는 배열
+		Month_Count[1][1] = 999; // 최솟값을 저장하는 배열
+		try {
+			
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+	
+			while(rs.next()) {
+				count = rs.getInt("Count(num)");
+				month = rs.getInt("Month");
+				if(count >= Month_Count[0][1]) { // 최댓값 추출 구문
+					Month_Count[0][1] = count;
+					Month_Count[0][0] = month;
+				}
+				if(count <= Month_Count[1][1]) { // 최솟값 추출 구문
+					Month_Count[1][1] = count;
+					Month_Count[1][0] = month;
+				}
+			}
+			return Month_Count;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new int[2][2];
+	}
 }

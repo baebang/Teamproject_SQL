@@ -76,4 +76,14 @@ public class Control {
 	public int getMax() {
 		return duration_Max;
 	}
+	
+	public int[][] Person_Area_filter(String Area) {
+		String sql = "select count(num), month "
+				+ " from sqldata"
+				+ " where area = '" + Area + "'"
+				+ " group by month;";
+		int[][] Month_Count = dbm.LoadAreaData(sql);	
+		
+		return Month_Count;
+	}
 }

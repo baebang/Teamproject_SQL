@@ -106,6 +106,7 @@ public class Selected_datePanel extends JPanel{
 					selected_Graph.getData(selected_Data, control.getMax());
 					selected_Graph.getDate(Month, date);
 					selected_Graph.repaint();
+					break;
 			}
 		}
      }
