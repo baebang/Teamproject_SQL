@@ -33,6 +33,20 @@ public class Control {
 		}
 		return null;
 	}
+	
+	public Data insert_filter(int people_num) {
+		for(Data item : DataList) {
+			if(item.getPeople_num() == people_num) {
+				//중복값이 있을때 걸러주는 것 ★
+				return null;
+			}
+			else {
+				//중복값이 없을때 걸러주는 것★
+				
+			}
+		}
+		return null;
+	}
 
 
 
@@ -71,6 +85,8 @@ public class Control {
 		
 		return selected_data;
 	}
+	
+	
 	
 	
 	public int getMax() {

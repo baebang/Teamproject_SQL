@@ -20,7 +20,7 @@ public class Main {
    private Control control;
    static JMenuBar mb;
    static JMenu x;
-   static JMenuItem m1, m2, m3, m4, m5, m6;
+   static JMenuItem m1, m2, m3, m4, m5, m6, m7;
    
    private JFrame frame;
 
@@ -39,6 +39,9 @@ public class Main {
    private Person_AreaPanel Person_AreaPanel;
    
    // 5번화면 
+   private DML_Panel DML_panel;
+   
+   // 6번화면 
    private InformationPanel InformationPanel;
    
    
@@ -55,7 +58,9 @@ public class Main {
       m3 = new JMenuItem("기간");
       m4 = new JMenuItem("지정날짜");
       m5 = new JMenuItem("인원, 구역");
-      m6 = new JMenuItem("안내");
+      m6 = new JMenuItem("데이터입력");
+      m7 = new JMenuItem("안내");
+      
 
       x.add(m1);
       x.add(m2);
@@ -63,6 +68,7 @@ public class Main {
       x.add(m4);
       x.add(m5);
       x.add(m6);
+      x.add(m7);
 
       mb.add(x);
       frame.setJMenuBar(mb);
@@ -77,6 +83,7 @@ public class Main {
             DurationPanel.setVisible(false);
             Selected_datePanel.setVisible(false);
             Person_AreaPanel.setVisible(false);
+            DML_panel.setVisible(false);
             InformationPanel.setVisible(false);
          }
       });
@@ -89,6 +96,7 @@ public class Main {
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(false);
+             DML_panel.setVisible(false);
              InformationPanel.setVisible(false);
          }
       });
@@ -101,6 +109,7 @@ public class Main {
              DurationPanel.setVisible(true);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(false);
+             DML_panel.setVisible(false);
              InformationPanel.setVisible(false);
          }
       });
@@ -113,6 +122,7 @@ public class Main {
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(true);
              Person_AreaPanel.setVisible(false);
+             DML_panel.setVisible(false);
              InformationPanel.setVisible(false);
          }
       });
@@ -125,6 +135,7 @@ public class Main {
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(true);
+             DML_panel.setVisible(false);
              InformationPanel.setVisible(false);
          }
       });
@@ -137,9 +148,23 @@ public class Main {
              DurationPanel.setVisible(false);
              Selected_datePanel.setVisible(false);
              Person_AreaPanel.setVisible(false);
-             InformationPanel.setVisible(true);
+             DML_panel.setVisible(true);
+             InformationPanel.setVisible(false);
          }
       });
+      
+      m7.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent arg0) {
+              Mainpanel.setVisible(false);
+              Patient_NumberPanel.setVisible(false);
+              DurationPanel.setVisible(false);
+              Selected_datePanel.setVisible(false);
+              Person_AreaPanel.setVisible(false);
+              DML_panel.setVisible(false);
+              InformationPanel.setVisible(true);
+          }
+       });
 
    }
 
@@ -159,6 +184,7 @@ public class Main {
       DurationPanel = new DurationPanel(frame, control);
       Selected_datePanel = new Selected_datePanel(frame, control);
       Person_AreaPanel = new Person_AreaPanel(frame, control);
+      DML_panel = new DML_Panel(frame, control);
       InformationPanel = new InformationPanel(frame);
       
       menuInit();
@@ -167,6 +193,7 @@ public class Main {
       DurationPanel.setVisible(false);
       Selected_datePanel.setVisible(false);
       Person_AreaPanel.setVisible(false);
+      DML_panel.setVisible(false);
       InformationPanel.setVisible(false);
    }
 
