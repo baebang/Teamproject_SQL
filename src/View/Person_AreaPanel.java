@@ -43,10 +43,10 @@ public class Person_AreaPanel extends JPanel {
       Person_Area_NewLabel.setFont(new Font("Arial", Font.BOLD, 35));
       Person_Area_NewLabel.setForeground(new Color(204, 051, 051));
       Person_Area_NewLabel.setHorizontalAlignment(JLabel.CENTER);
-      Person_Area_NewLabel.setBounds(70, 5, 500, 40);
+      Person_Area_NewLabel.setBounds(70, 30, 500, 40);
 
       JLabel lblSerch = new JLabel("지역 검색");
-      lblSerch.setBounds(70, 70, 57, 15);
+      lblSerch.setBounds(70, 80, 57, 15);
       this.add(lblSerch);
 
       // sample list
@@ -56,13 +56,13 @@ public class Person_AreaPanel extends JPanel {
     		   "재외국민", "종로구", "주소불명", "중구", "중구(노원)", "중구(은평)", "중랑구", "천안", "타시도", "파주", "평택", "포천", "하남", "화성", "확인(구로)", "확인(동작)"};
 
       AreaBox = new JComboBox(Arealist);
-      AreaBox.setBounds(136, 68, 116, 19);
+      AreaBox.setBounds(136, 75, 116, 19);
       this.add(AreaBox);
 
       JButton btnApply = new JButton("확인");
       btnApply.setActionCommand("확인");
       btnApply.addActionListener(new MyActionListener());
-      btnApply.setBounds(454, 65, 120, 23);
+      btnApply.setBounds(454, 75, 120, 23);
       this.add(btnApply);
 
       this.add(Person_Area_NewLabel);

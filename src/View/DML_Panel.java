@@ -41,20 +41,20 @@ public class DML_Panel extends JPanel{
 		Date_Area_Label.setFont(new Font("Arial", Font.BOLD, 35));
 		Date_Area_Label.setForeground(new Color(204, 051, 051));
 		Date_Area_Label.setHorizontalAlignment(JLabel.CENTER);
-		Date_Area_Label.setBounds(70, 5, 500, 40);
+		Date_Area_Label.setBounds(70, 30, 500, 40);
 			
 		Patient_Number = new JTextArea();
 		Patient_Number.setFont(new Font("Arial", Font.BOLD, 35));
 		Patient_Number.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
-		Patient_Number.setBounds(225, 70, 200, 40);
+		Patient_Number.setBounds(225, 80, 200, 40);
 		
 		Select = new JButton("Select");
-		Select.setBounds(445, 70, 100, 40);
+		Select.setBounds(445, 80, 100, 40);
 		Select.setActionCommand("select");
 		Select.addActionListener(new MyActionCommand());
 		
 		insert = new JButton("insert");
-		insert.setBounds(550, 70, 80, 40);
+		insert.setBounds(550, 80, 80, 40);
 		insert.setActionCommand("insert");
 		insert.addActionListener(new MyActionCommand());
 		
@@ -62,91 +62,91 @@ public class DML_Panel extends JPanel{
 		month.setFont(new Font(null, Font.BOLD, 15));
 		month.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		month.setHorizontalAlignment(JLabel.CENTER);
-		month.setBounds(0, 130, 70, 30);
+		month.setBounds(0, 140, 70, 30);
 		month.setVisible(false);
 		month1 = new JLabel();
 		month1.setFont(new Font(null, Font.BOLD, 15));
 		month1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		month1.setHorizontalAlignment(JLabel.CENTER);
-		month1.setBounds(0, 160, 70, 30);
+		month1.setBounds(0, 170, 70, 30);
 		month1.setVisible(false);
 		
 		data = new JLabel("확진 일");
 		data.setFont(new Font(null, Font.BOLD, 15));
 		data.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		data.setHorizontalAlignment(JLabel.CENTER);
-		data.setBounds(70, 130, 70, 30);
+		data.setBounds(70, 140, 70, 30);
 		data.setVisible(false);
 		data1 = new JLabel();
 		data1.setFont(new Font(null, Font.BOLD, 15));
 		data1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		data1.setHorizontalAlignment(JLabel.CENTER);
-		data1.setBounds(70, 160, 70, 30);
+		data1.setBounds(70, 170, 70, 30);
 		data1.setVisible(false);
 		
 		area = new JLabel("지역");
 		area.setFont(new Font(null, Font.BOLD, 15));
 		area.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		area.setHorizontalAlignment(JLabel.CENTER);
-		area.setBounds(140, 130, 70, 30);
+		area.setBounds(140, 140, 70, 30);
 		area.setVisible(false);
 		area1 = new JLabel();
 		area1.setFont(new Font(null, Font.BOLD, 15));
 		area1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		area1.setHorizontalAlignment(JLabel.CENTER);
-		area1.setBounds(140, 160, 70, 30);
+		area1.setBounds(140, 170, 70, 30);
 		area1.setVisible(false);
 		
 		status = new JLabel("상태");
 		status.setFont(new Font(null, Font.BOLD, 15));
 		status.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		status.setHorizontalAlignment(JLabel.CENTER);
-		status.setBounds(210, 130, 70, 30);
+		status.setBounds(210, 140, 70, 30);
 		status.setVisible(false);
 		status1 = new JLabel();
 		status1.setFont(new Font(null, Font.BOLD, 15));
 		status1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		status1.setHorizontalAlignment(JLabel.CENTER);
-		status1.setBounds(210, 160, 70, 30);
+		status1.setBounds(210, 170, 70, 30);
 		status1.setVisible(false);
 		
 		route = new JLabel("이동경로");
 		route.setFont(new Font(null, Font.BOLD, 15));
 		route.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		route.setHorizontalAlignment(JLabel.LEFT);
-		route.setBounds(0, 190, 400, 30);
+		route.setBounds(0, 200, 400, 30);
 		route.setVisible(false);
 		route1 = new JLabel();
 		route1.setFont(new Font(null, Font.BOLD, 10));
 		route1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		route1.setHorizontalAlignment(JLabel.LEFT);
-		route1.setBounds(0, 220, 400, 30);
+		route1.setBounds(0, 230, 400, 30);
 		route1.setVisible(false);
 		
 		travel = new JLabel("여행력");
 		travel.setFont(new Font(null, Font.BOLD, 15));
 		travel.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		travel.setHorizontalAlignment(JLabel.LEFT);
-		travel.setBounds(0, 250, 400, 30);
+		travel.setBounds(0, 260, 400, 30);
 		travel.setVisible(false);
 		travel1 = new JLabel();
 		travel1.setFont(new Font(null, Font.BOLD, 10));
 		travel1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		travel1.setHorizontalAlignment(JLabel.LEFT);
-		travel1.setBounds(0, 280, 400, 30);
+		travel1.setBounds(0, 290, 400, 30);
 		travel1.setVisible(false);
 		
 		contact = new JLabel("접촉력");
 		contact.setFont(new Font(null, Font.BOLD, 15));
 		contact.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		contact.setHorizontalAlignment(JLabel.LEFT);
-		contact.setBounds(0, 310, 400, 30);
+		contact.setBounds(0, 320, 400, 30);
 		contact.setVisible(false);
 		contact1 = new JLabel();
 		contact1.setFont(new Font(null, Font.BOLD, 10));
 		contact1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		contact1.setHorizontalAlignment(JLabel.LEFT);
-		contact1.setBounds(0, 340, 400, 30);
+		contact1.setBounds(0, 350, 400, 30);
 		contact1.setVisible(false);
 		
 		

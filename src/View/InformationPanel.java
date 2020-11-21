@@ -27,7 +27,7 @@ public class InformationPanel extends JPanel{
 	      information_Content1.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content1.setForeground(new Color(0, 0, 0));
 	      information_Content1.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content1.setBounds(30, 30, 600, 200);
+	      information_Content1.setBounds(30, 10, 600, 200);
 	      
 	      this.add(information_Content1);
 	      
@@ -35,7 +35,7 @@ public class InformationPanel extends JPanel{
 	      information_Content2.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content2.setForeground(new Color(0, 0, 0));
 	      information_Content2.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content2.setBounds(30, 60, 600, 200);
+	      information_Content2.setBounds(30, 40, 600, 200);
 	      
 	      this.add(information_Content2);
 	      
@@ -44,7 +44,7 @@ public class InformationPanel extends JPanel{
 	      information_Content2_2.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content2_2.setForeground(new Color(0, 0, 0));
 	      information_Content2_2.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content2_2.setBounds(30, 90, 600, 200);
+	      information_Content2_2.setBounds(30, 70, 600, 200);
 	      
 	      this.add(information_Content2_2);
 	      
@@ -52,7 +52,7 @@ public class InformationPanel extends JPanel{
 	      information_Content3.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content3.setForeground(new Color(0, 0, 0));
 	      information_Content3.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content3.setBounds(30, 120, 600, 200);
+	      information_Content3.setBounds(30, 100, 600, 200);
 	      
 	      this.add(information_Content3);
 	      
@@ -61,7 +61,7 @@ public class InformationPanel extends JPanel{
 	      information_Content4.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content4.setForeground(new Color(0, 0, 0));
 	      information_Content4.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content4.setBounds(30, 150, 600, 200);
+	      information_Content4.setBounds(30, 130, 600, 200);
 	      
 	      this.add(information_Content4);
 	      
@@ -69,7 +69,7 @@ public class InformationPanel extends JPanel{
 	      information_Content5.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content5.setForeground(new Color(0, 0, 0));
 	      information_Content5.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content5.setBounds(30, 180, 600, 200);
+	      information_Content5.setBounds(30, 160, 600, 200);
 	      
 	      this.add(information_Content5);
 	      
@@ -77,7 +77,7 @@ public class InformationPanel extends JPanel{
 	      information_Content6.setFont(new Font("¸¼Àº°íµñ", Font.BOLD, 15));
 	      information_Content6.setForeground(new Color(0, 0, 0));
 	      information_Content6.setHorizontalAlignment(JLabel.CENTER);
-	      information_Content6.setBounds(30, 210, 600, 200);
+	      information_Content6.setBounds(30, 190, 600, 200);
 	      
 	      this.add(information_Content6);
 

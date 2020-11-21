@@ -44,12 +44,12 @@ public class DurationPanel extends JPanel{
       Duration_NewLabel.setFont(new Font("Arial", Font.BOLD, 35));
       Duration_NewLabel.setForeground(new Color(204, 051, 051));
       Duration_NewLabel.setHorizontalAlignment(JLabel.CENTER);
-      Duration_NewLabel.setBounds(70, 5, 500, 40);
+      Duration_NewLabel.setBounds(70, 30, 500, 40);
       
       this.add(Duration_NewLabel);
       
       JLabel lblDay = new JLabel("날짜 입력");
-       lblDay.setBounds(50, 70, 57, 15);
+       lblDay.setBounds(50, 80, 57, 15);
        this.add(lblDay);
 
        // 월
@@ -59,7 +59,7 @@ public class DurationPanel extends JPanel{
        }
 
        duration_month = new JComboBox(MonthList);
-       duration_month.setBounds(106, 66, 116, 21);
+       duration_month.setBounds(106, 75, 116, 21);
        duration_month.setSize(new Dimension(55, 20));
        this.add(duration_month);
 
@@ -71,17 +71,17 @@ public class DurationPanel extends JPanel{
 
        
        duration_date = new JComboBox(DateList);
-       duration_date.setBounds(175, 66, 116, 21);
+       duration_date.setBounds(175, 75, 116, 21);
        duration_date.setSize(new Dimension(55, 20));
        this.add(duration_date);
        
       JLabel Duration_Imp = new JLabel("입력 날짜의 + 15일 기록 출력");
-      Duration_Imp.setBounds(250, 70, 200, 15);
+      Duration_Imp.setBounds(250, 80, 200, 15);
       Duration_Imp.setForeground(new Color(0, 0, 0));
        this.add(Duration_Imp);
          
        JButton btnApply = new JButton("확인");
-       btnApply.setBounds(454, 65, 120, 23);
+       btnApply.setBounds(454, 75, 120, 23);
        btnApply.setActionCommand("확인");
        btnApply.addActionListener(new MyActionListener());
        this.add(btnApply);

@@ -32,7 +32,7 @@ public class Patient_NumberPanel extends JPanel{
 	
 	private void panelInit(JFrame frame) {
 		this.setBackground(new Color(255, 255, 255));
-		this.setBounds(0, 0, 636, 440);//636 360
+		this.setBounds(0, 30, 636, 440);//636 360
 		this.setLayout(null);
 
 		// 날짜 & 지역

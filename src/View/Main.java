@@ -55,42 +55,42 @@ public class Main {
    
    private void toolbarInit() { // 툴바
 	      t = new JToolBar();
-	      t.setBackground(new Color(225, 240, 255));
+	      t.setBackground(new Color(255, 204, 204));
 	      
 	      t.add(tool1 = new JButton("Loading 화면"));
-	      tool1.setBackground(new Color(0, 35, 110));
+	      tool1.setBackground(new Color(255, 153, 153));
 	      tool1.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool1.setForeground(Color.WHITE);
+	      tool1.setForeground(Color.BLACK);
 	      
 	      t.add(tool2 = new JButton("환자 번호 조회"));
-	      tool2.setBackground(new Color(0, 35, 110));
+	      tool2.setBackground(new Color(255, 153, 153));
 	      tool2.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool2.setForeground(Color.WHITE);
+	      tool2.setForeground(Color.BLACK);
 	      
 	      t.add(tool3 = new JButton("기간"));
-	      tool3.setBackground(new Color(0, 35, 110));
+	      tool3.setBackground(new Color(255, 153, 153));
 	      tool3.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool3.setForeground(Color.WHITE);
+	      tool3.setForeground(Color.BLACK);
 	      
 	      t.add(tool4 = new JButton("지정 날짜"));
-	      tool4.setBackground(new Color(0, 35, 110));
+	      tool4.setBackground(new Color(255, 153, 153));
 	      tool4.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool4.setForeground(Color.WHITE);
+	      tool4.setForeground(Color.BLACK);
 
 	      t.add(tool5 = new JButton("구역별 최고/최저"));
-	      tool5.setBackground(new Color(0, 35, 110));
+	      tool5.setBackground(new Color(255, 153, 153));
 	      tool5.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool5.setForeground(Color.WHITE);
+	      tool5.setForeground(Color.BLACK);
 
 	      t.add(tool6 = new JButton("데이터입력"));
-	      tool6.setBackground(new Color(0, 35, 110));
+	      tool6.setBackground(new Color(255, 153, 153));
 	      tool6.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool6.setForeground(Color.WHITE);
+	      tool6.setForeground(Color.BLACK);
 	      
 	      t.add(tool7 = new JButton("안내"));
-	      tool7.setBackground(new Color(0, 35, 110));
+	      tool7.setBackground(new Color(255, 153, 153));
 	      tool7.setFont(new Font("돋움", Font.BOLD, 12));
-	      tool7.setForeground(Color.WHITE);
+	      tool7.setForeground(Color.BLACK);
 	      
 	      t.addSeparator();
 
@@ -317,7 +317,7 @@ public class Main {
       frame.setTitle("MJ : COVID-19");
       frame.setBounds(100, 100, 650, 430);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.getContentPane().setLayout(null);
+//      frame.getContentPane().setLayout(null);
    }
 
    private void Initialize() {
