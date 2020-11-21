@@ -33,8 +33,8 @@ public class Selected_datePanel extends JPanel{
       selected_Graph.setBorder(BorderFactory.createLineBorder(new Color(0, 35, 110)));
       selected_Graph.setBackground(Color.white);
       selected_Graph.setBounds(60, 110, 510, 240);
-		this.add(selected_Graph);
-		
+      this.add(selected_Graph);
+      
    }
    
    private void panelInit(JFrame frame) {
@@ -48,12 +48,12 @@ public class Selected_datePanel extends JPanel{
       Selected_date_NewLabel.setFont(new Font("Arial", Font.BOLD, 35));
       Selected_date_NewLabel.setForeground(new Color(204, 051, 051));
       Selected_date_NewLabel.setHorizontalAlignment(JLabel.CENTER);
-      Selected_date_NewLabel.setBounds(70, 5, 500, 40);
+      Selected_date_NewLabel.setBounds(70, 30, 500, 40);
       
       this.add(Selected_date_NewLabel);
       
       JLabel lblDay = new JLabel("날짜 입력");
-       lblDay.setBounds(50, 70, 57, 15);
+       lblDay.setBounds(50, 80, 57, 15);
        this.add(lblDay);
 
        // 월
@@ -63,7 +63,7 @@ public class Selected_datePanel extends JPanel{
        }
 
        selected_month = new JComboBox(MonthList);
-       selected_month.setBounds(106, 66, 116, 21);
+       selected_month.setBounds(106, 75, 116, 21);
        selected_month.setSize(new Dimension(55, 20));
        this.add(selected_month);
 
@@ -75,41 +75,40 @@ public class Selected_datePanel extends JPanel{
 
        // 일
        selected_date = new JComboBox(DateList);
-       selected_date.setBounds(175, 66, 116, 21);
+       selected_date.setBounds(175, 75, 116, 21);
        selected_date.setSize(new Dimension(55, 20));
        this.add(selected_date);
        
       JLabel selected_Imp = new JLabel("현재 최고 최저 그래프");
-      selected_Imp.setBounds(250, 70, 200, 15);
+      selected_Imp.setBounds(250, 80, 200, 15);
       selected_Imp.setForeground(new Color(255, 255, 255));
        this.add(selected_Imp);
          
        JButton btnApply = new JButton("확인");
-       btnApply.setBounds(454, 65, 120, 23);
+       btnApply.setBounds(454, 75, 120, 23);
        btnApply.setActionCommand("확인");
        btnApply.addActionListener(new MyActionListener());
        this.add(btnApply);
    }
    
    class MyActionListener implements ActionListener{
-   	private String Month, date;
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			switch(e.getActionCommand()) {
-			
-				case "확인":
-					
-					Month = (String) selected_month.getSelectedItem();
-					date = (String) selected_date.getSelectedItem();
-					selected_Data = control.selected_filter(Month, date);
-					selected_Graph.getData(selected_Data, control.getMax());
-					selected_Graph.getDate(Month, date);
-					selected_Graph.repaint();
-					break;
-			}
-		}
+      private String Month, date;
+      @Override
+      public void actionPerformed(ActionEvent e) {
+         // TODO Auto-generated method stub
+         switch(e.getActionCommand()) {
+         
+            case "확인":
+               
+               Month = (String) selected_month.getSelectedItem();
+               date = (String) selected_date.getSelectedItem();
+               selected_Data = control.selected_filter(Month, date);
+               selected_Graph.getData(selected_Data, control.getMax());
+               selected_Graph.getDate(Month, date);
+               selected_Graph.repaint();
+               break;
+         }
+      }
      }
 }
-
 
