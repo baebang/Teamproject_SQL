@@ -42,7 +42,7 @@ public class DurationPanel extends JPanel{
       // 기간 화면
       JLabel Duration_NewLabel = new JLabel("Duration");
       Duration_NewLabel.setFont(new Font("Arial", Font.BOLD, 35));
-      Duration_NewLabel.setForeground(new Color(0, 35, 110));
+      Duration_NewLabel.setForeground(new Color(204, 051, 051));
       Duration_NewLabel.setHorizontalAlignment(JLabel.CENTER);
       Duration_NewLabel.setBounds(70, 5, 500, 40);
       
@@ -77,7 +77,7 @@ public class DurationPanel extends JPanel{
        
       JLabel Duration_Imp = new JLabel("입력 날짜의 + 15일 기록 출력");
       Duration_Imp.setBounds(250, 70, 200, 15);
-      Duration_Imp.setForeground(new Color(0, 35, 110));
+      Duration_Imp.setForeground(new Color(0, 0, 0));
        this.add(Duration_Imp);
          
        JButton btnApply = new JButton("확인");
