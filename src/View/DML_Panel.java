@@ -17,7 +17,7 @@ import Control.Control;
 import Model.Data;
 
 public class DML_Panel extends JPanel{
-	private JTextArea Patient_Number;
+	private JTextArea Patient_Number, month_t;
 	private JButton Select;
 	private JButton insert;
 	private Data Selected_Data;
@@ -63,13 +63,18 @@ public class DML_Panel extends JPanel{
 		month.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		month.setHorizontalAlignment(JLabel.CENTER);
 		month.setBounds(0, 130, 70, 30);
-		month.setVisible(false);
+		month_t = new JTextArea();
+		month_t.setFont(new Font(null, Font.BOLD, 15));
+		month_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		month_t.setBounds(0, 160, 70, 30);
 		month1 = new JLabel();
 		month1.setFont(new Font(null, Font.BOLD, 15));
 		month1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		month1.setHorizontalAlignment(JLabel.CENTER);
-		month1.setBounds(0, 160, 70, 30);
+		month1.setBounds(0, 160, 70, 30);;
+		month.setVisible(false);
 		month1.setVisible(false);
+		month_t.setVisible(false);
 		
 		data = new JLabel("È®Áø ÀÏ");
 		data.setFont(new Font(null, Font.BOLD, 15));
@@ -155,6 +160,7 @@ public class DML_Panel extends JPanel{
 		this.add(Select);
 		this.add(insert);
 		this.add(month);
+		this.add(month_t);
 		this.add(month1);
 		this.add(data);
 		this.add(data1);
@@ -182,9 +188,9 @@ public class DML_Panel extends JPanel{
 						int num = Integer.parseInt(Patient_Number.getText());
 						Selected_Data = control.Patient_Number(num);
 						if(Selected_Data != null) {
-							month1.setText(Integer.toString(Selected_Data.getMonth()));
-							month1.setVisible(true);
+//							month1.setText(Integer.toString(Selected_Data.getMonth()));
 							month.setVisible(true);
+							month_t.setVisible(true);
 							
 							data1.setText(Integer.toString(Selected_Data.getDate()));
 							data1.setVisible(true);
@@ -217,8 +223,8 @@ public class DML_Panel extends JPanel{
 						Selected_Data = control.Patient_Number(num2);
 						if(Selected_Data != null) {
 							month1.setText(Integer.toString(Selected_Data.getMonth()));
-							month1.setVisible(true);
-							month.setVisible(true);
+//							month1.setVisible(true);
+//							month.setVisible(true);
 							
 							data1.setText(Integer.toString(Selected_Data.getDate()));
 							data1.setVisible(true);
