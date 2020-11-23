@@ -17,7 +17,7 @@ import Control.Control;
 import Model.Data;
 
 public class DML_Panel extends JPanel{
-	private JTextArea Patient_Number, month_t;
+	private JTextArea Patient_Number, month_t,data_t,area_t, status_t, people_info_t, route_t, travel_t, contact_t;
 	private JButton Select;
 	private JButton insert;
 	private Data Selected_Data;
@@ -82,6 +82,11 @@ public class DML_Panel extends JPanel{
 		data.setHorizontalAlignment(JLabel.CENTER);
 		data.setBounds(70, 130, 70, 30);
 		data.setVisible(false);
+		data_t = new JTextArea();
+		data_t.setFont(new Font(null, Font.BOLD, 15));
+		data_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		data_t.setBounds(70, 160, 70, 30);
+		data_t.setVisible(false);
 		data1 = new JLabel();
 		data1.setFont(new Font(null, Font.BOLD, 15));
 		data1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
@@ -89,12 +94,18 @@ public class DML_Panel extends JPanel{
 		data1.setBounds(70, 160, 70, 30);
 		data1.setVisible(false);
 		
+		
 		area = new JLabel("Áö¿ª");
 		area.setFont(new Font(null, Font.BOLD, 15));
 		area.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
 		area.setHorizontalAlignment(JLabel.CENTER);
 		area.setBounds(140, 130, 70, 30);
 		area.setVisible(false);
+		area_t = new JTextArea();
+		area_t.setFont(new Font(null, Font.BOLD, 15));
+		area_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		area_t.setBounds(140, 160, 70, 30);
+		area_t.setVisible(false);
 		area1 = new JLabel();
 		area1.setFont(new Font(null, Font.BOLD, 15));
 		area1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
@@ -108,6 +119,11 @@ public class DML_Panel extends JPanel{
 		status.setHorizontalAlignment(JLabel.CENTER);
 		status.setBounds(210, 130, 70, 30);
 		status.setVisible(false);
+		status_t = new JTextArea();
+		status_t.setFont(new Font(null, Font.BOLD, 15));
+		status_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		status_t.setBounds(210, 160, 70, 30);
+		status_t.setVisible(false);
 		status1 = new JLabel();
 		status1.setFont(new Font(null, Font.BOLD, 15));
 		status1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
@@ -121,6 +137,11 @@ public class DML_Panel extends JPanel{
 		route.setHorizontalAlignment(JLabel.LEFT);
 		route.setBounds(0, 190, 400, 30);
 		route.setVisible(false);
+		route_t = new JTextArea();
+		route_t.setFont(new Font(null, Font.BOLD, 15));
+		route_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		route_t.setBounds(0, 220, 400, 30);
+		route_t.setVisible(false);
 		route1 = new JLabel();
 		route1.setFont(new Font(null, Font.BOLD, 10));
 		route1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
@@ -134,6 +155,11 @@ public class DML_Panel extends JPanel{
 		travel.setHorizontalAlignment(JLabel.LEFT);
 		travel.setBounds(0, 250, 400, 30);
 		travel.setVisible(false);
+		travel_t = new JTextArea();
+		travel_t.setFont(new Font(null, Font.BOLD, 15));
+		travel_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		travel_t.setBounds(0, 280, 400, 30);
+		travel_t.setVisible(false);
 		travel1 = new JLabel();
 		travel1.setFont(new Font(null, Font.BOLD, 10));
 		travel1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
@@ -147,6 +173,11 @@ public class DML_Panel extends JPanel{
 		contact.setHorizontalAlignment(JLabel.LEFT);
 		contact.setBounds(0, 310, 400, 30);
 		contact.setVisible(false);
+		contact_t = new JTextArea();
+		contact_t.setFont(new Font(null, Font.BOLD, 15));
+		contact_t.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
+		contact_t.setBounds(0, 340, 400, 30);
+		contact_t.setVisible(false);
 		contact1 = new JLabel();
 		contact1.setFont(new Font(null, Font.BOLD, 10));
 		contact1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.gray));
@@ -163,17 +194,24 @@ public class DML_Panel extends JPanel{
 		this.add(month_t);
 		this.add(month1);
 		this.add(data);
+		this.add(data_t);
 		this.add(data1);
 		this.add(area);
+		this.add(area_t);
 		this.add(area1);
 		this.add(status);
+		this.add(status_t);
 		this.add(status1);
 		this.add(route);
+		this.add(route_t);
 		this.add(route1);
 		this.add(travel);
+		this.add(travel_t);
 		this.add(travel1);
 		this.add(contact);
+		this.add(contact_t);
 		this.add(contact1);
+		
 
 	}
 	
@@ -192,29 +230,35 @@ public class DML_Panel extends JPanel{
 							month.setVisible(true);
 							month_t.setVisible(true);
 							
-							data1.setText(Integer.toString(Selected_Data.getDate()));
+					//		data1.setText(Integer.toString(Selected_Data.getDate()));
 							data1.setVisible(true);
 							data.setVisible(true);
+							data_t.setVisible(true);
 							
-							area1.setText(Selected_Data.getArea());
+					//		area1.setText(Selected_Data.getArea());
 							area1.setVisible(true);
 							area.setVisible(true);
+							area_t.setVisible(true);
 							
-							status1.setText(Selected_Data.getStatus());
+					//		status1.setText(Selected_Data.getStatus());
 							status1.setVisible(true);
 							status.setVisible(true);
+							status_t.setVisible(true);
 
-							route1.setText(Selected_Data.getRoute());
+					//		route1.setText(Selected_Data.getRoute());
 							route1.setVisible(true);
 							route.setVisible(true);
+							route_t.setVisible(true);
 							
-							travel1.setText(Selected_Data.getTravel());
+					//		travel1.setText(Selected_Data.getTravel());
 							travel1.setVisible(true);
 							travel.setVisible(true);
+							travel_t.setVisible(true);
 							
-							contact1.setText(Selected_Data.getContact());
+					//		contact1.setText(Selected_Data.getContact());
 							contact1.setVisible(true);
 							contact.setVisible(true);
+							contact_t.setVisible(true);
 							
 						}
 						
