@@ -11,12 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import Control.Control;
 import Model.Data;
 
 public class Patient_NumberPanel extends JPanel{
+	private static final long serialVersionUID = 1L;
 	private JTextArea Patient_Number;
 	private JButton Select;
 	private Data Selected_Data;
