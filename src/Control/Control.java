@@ -2,6 +2,10 @@ package Control;
 
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
+//import javax.swing.JButton;
+
 import Model.Data;
 
 public class Control {
@@ -28,25 +32,18 @@ public class Control {
 
 
 	public Data Patient_Number(int num) {
-		for(Data item : DataList) {
-			if(item.getPeople_num() == num) return item;
-		}
-		return null;
+		String sql = "select * from sqldata where people_num = " + num + ";";
+		Data item = dbm.Load(sql);
+		if(item != null) return item;
+		else return null;
 	}
 	
-	public Data insert_filter(int people_num) {
-		for(Data item : DataList) {
-			if(item.getPeople_num() == people_num) {
-				//중복값이 있을때 걸러주는 것 ★
-				return null;
-			}
-			else {
-				//중복값이 없을때 걸러주는 것★
-				
-			}
-		}
-		return null;
-	}
+//	public JButton insert_Data(int people_num,int month) {
+//		String sql = "UPDATE sqldata SET month=" + month + " WHERE people_num= "+ people_num+";";
+//		dbm.LoadData(sql);
+//		return null;
+//	}
+		
 
 
 
@@ -57,7 +54,7 @@ public class Control {
 		duration_Max = 0;
 		for(int i=0; i<15; i++) {
 			
-			String sql = "Select Count(num) from sqldata where MONTH = " + month + " AND DATE = " + date + ";";
+			String sql = "Select Count(num) as num from sqldata where MONTH = " + month + " AND DATE = " + date + ";";
 			durationData[i] = dbm.LoadData(sql);
 			
 			date = Integer.toString(Integer.parseInt(date) + 1);
@@ -79,7 +76,7 @@ public class Control {
 		String month = month1.substring(0, month1.length()-1);
 		String date = date1.substring(0, date1.length()-1);		
 		
-		String sql = "Select Count(num) from sqldata where MONTH = " + month + " AND DATE = " + date + ";";
+		String sql = "Select Count(num) as num from sqldata where MONTH = " + month + " AND DATE = " + date + ";";
 		int selected_data = dbm.LoadData(sql);	
 		duration_Max = selected_data;
 		
@@ -102,4 +99,33 @@ public class Control {
 		
 		return Month_Count;
 	}
+
+
+
+	public int Update_Data(Data item) {
+		return dbm.Update(item);
+	}
+
+
+
+	public int getMaxPrimaryKey() {
+		String sql = "select Max(num) as num from sqldata;";
+		int maxnum = dbm.LoadData(sql);
+		return maxnum;
+	}
+
+
+
+	public int getMaxpeopleNum() {
+		String sql = "select Max(people_num) as num from sqldata;";
+		int maxpnum = dbm.LoadData(sql);
+		return maxpnum;
+	}
+
+
+
+	public void insert_Data(Data insert_item) {
+		dbm.save(insert_item);
+	}
+
 }

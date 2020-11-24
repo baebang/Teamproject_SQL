@@ -46,7 +46,7 @@ public class DBmanager {
 			
 			PState.executeUpdate();
 			
-		} catch (Exception e) {}	
+		} catch (Exception e) {e.printStackTrace();}	
 		
 	}
 
@@ -76,11 +76,11 @@ public class DBmanager {
 				PState.executeUpdate();
 				
 			} catch (Exception e) {
-				e.getStackTrace();
 			}
 		}
-		
 	}
+	
+	
 
 	public int LoadData(String sql) {
 		try {
@@ -90,7 +90,7 @@ public class DBmanager {
 			int result = 0;
 			
 			while(rs.next()) {
-				result = rs.getInt("Count(num)");
+				result = rs.getInt("num");
 			}
 			return result;
 			
@@ -100,6 +100,8 @@ public class DBmanager {
 		return 0;
 	}
 
+	
+	
 	public int[][] LoadAreaData(String sql) {
 		int[][] Month_Count = new int[2][2];
 		int month, count;
@@ -128,5 +130,61 @@ public class DBmanager {
 			e.printStackTrace();
 		}
 		return new int[2][2];
+	}
+
+	public Data Load(String sql) {
+		Data item = new Data();
+		try {		
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				item.setNum(rs.getInt("num"));
+				item.setMonth(rs.getInt("month"));
+				item.setDate(rs.getInt("date"));
+				item.setPeople_num(rs.getInt("people_num"));
+				item.setContry(rs.getString("contry"));
+				item.setPeople_info(rs.getString("people_info"));
+				item.setArea(rs.getString("area"));
+				item.setTravel(rs.getString("travel"));
+				item.setContact(rs.getString("contact"));
+				item.setMeasures(rs.getString("measures"));
+				item.setStatus(rs.getString("status"));
+				item.setRoute(rs.getString("route"));
+				item.setRegistration_d(rs.getString("registration_d"));
+				item.setModified_d(rs.getString("modified_d"));
+				item.setExposure(rs.getString("exposure"));
+			}
+			return item;
+			
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public int Update(Data item) {
+		try {
+			PreparedStatement PState = null;
+			String sql = "UPDATE sqldata SET month = ?, date = ?, "
+					+ "area = ?, travel = ?, contact = ?, status = ?, route = ? " 
+					+ "where people_num = ?;";
+
+			PState = conn.prepareStatement(sql);
+
+			PState.setInt(1, item.getMonth());
+			PState.setInt(2, item.getDate());
+			PState.setString(3, item.getArea());
+			PState.setString(4, item.getTravel());
+			PState.setString(5, item.getContact());
+			PState.setString(6, item.getStatus());
+			PState.setString(7, item.getRoute());
+			PState.setInt(8, item.getPeople_num());
+
+			PState.executeUpdate();
+			return 1; //성공
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 0; //실패
+		}
 	}
 }
